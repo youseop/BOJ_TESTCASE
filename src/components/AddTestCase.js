@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { FormControl } from 'react-bootstrap';
+import { Button, Form, FormGroup, Label, Input, InputGroup } from 'reactstrap';
 import { v4 as uuidv4 } from "uuid";
 import { dbService, storageService } from "../fbase";
 
@@ -57,7 +59,17 @@ const AddTestCase = ({ userObj }) => {
 
 
   return (
+    
     <div>
+      <Form>
+        <FormGroup>
+          <Label for="exampleText">Text Area</Label>
+          <InputGroup>
+            <FormControl id="exampleText" value={TestCase} onChange={onChange_text} />
+          </InputGroup>
+        </FormGroup>
+      </Form>
+      
       <form onSubmit={onSubmit}>
         <input
           value={ProblemNum}
