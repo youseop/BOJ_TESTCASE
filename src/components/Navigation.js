@@ -1,21 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Auth from "../routes/Auth";
 
-const Navigation = ({ userObj }) => {
-  // const getName = async () => {
-  //   const userid_tmp = userObj.uid;
-  //   const userid = userid_tmp.substring(1, 8);
-  //   console.log(userid);
-  //   await userObj.updateProfile({
-  //     displayName: userid,
-  //   });
-  //   refreshUser();
-  // };
-  // useEffect(() => {
-  //   if (userObj.displayName == null) {
-  //     getName();
-  //   }
-  // }, []);
+const Navigation = ({ userObj,isLoggedIn }) => {
   return (
     
     <nav>
@@ -24,7 +11,11 @@ const Navigation = ({ userObj }) => {
           <Link to="/">Home</Link>
         </li>
         <li>
+        {isLoggedIn ? (
           <Link to="/Profile">Profile</Link>
+          ):(
+            <Auth />
+          )}
         </li></div>
       </ul>
     </nav>

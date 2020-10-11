@@ -20,14 +20,14 @@ const Auth = () => {
 
   return (
     <div>
-      <AuthForm />
+      {/* <AuthForm /> */}
       <div>
         <div>
         <button onClick={onSocialClick} name="google">
-          Continue with Google
+          Sign in - Google
         </button>
         <button onClick={onSocialClick} name="github">
-          Continue with Github
+          Sign in - Github
         </button>
         </div>
       </div>

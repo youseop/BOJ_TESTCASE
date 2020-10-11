@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
-import Nweet from "../components/Nweet";
+import TESTCASE from "../components/TESTCASE";
 import { authService, dbService } from "../fbase";
 
 const Profile = ({ refreshUser, userObj }) => {
   const history = useHistory();
-  const [profileNweets, setprofileNweets] = useState([]);
+  const [profileTestCases, setprofileTestCases] = useState([]);
   const [newDisplayName, setNewDisplayName] = useState(userObj.displayName);
 
   const onLogOutClick = () => {
@@ -14,19 +14,19 @@ const Profile = ({ refreshUser, userObj }) => {
     refreshUser();
   };
 
-  const getMyNweets = async () => {
+  const getMyTestCases = async () => {
     //Filtering!!
-    const nweets = await dbService
-      .collection("nweets")
+    const TestCases = await dbService
+      .collection("TestCase")
       .where("creatorId", "==", userObj.uid)
       .orderBy("createdAt")
       .get();
 
-    const nweetArray = nweets.docs.map((doc) => ({
+    const TestCaseArray = TestCases.docs.map((doc) => ({
       id: doc.id,
       ...doc.data(),
     }));
-    setprofileNweets(nweetArray);
+    setprofileTestCases(TestCaseArray);
   };
 
   const onChange = (event) => {
@@ -47,29 +47,31 @@ const Profile = ({ refreshUser, userObj }) => {
   };
 
   useEffect(() => {
-    getMyNweets();
+    getMyTestCases();
   }, []);
 
   return (
-    <><div>
-      <div>{userObj.displayName}</div>
-      <form onSubmit={onSubmit}>
+    <><div className="profile">
+      <div className="display_id">{userObj.displayName}</div>
+      <form onSubmit={onSubmit} className="profile_form">
         <input
+        className="changeid"
           value={newDisplayName}
           onChange={onChange}
           type="text"
           placeholder="Display name"
           maxLength={20}
         />
-        <input type="submit" value="Update Profile" />
+        <input 
+        className="changeid_submit, btn" type="submit" value="Update Profile" />
       </form>
-      <button onClick={onLogOutClick}>Log Out</button>
+      <button className="btn" onClick={onLogOutClick}>Log Out</button>
       <div>
-        {profileNweets.map((nweet) => (
-          <Nweet
-            key={nweet.id}
-            nweetObj={nweet}
-            isOwner={nweet.creatorId === userObj.uid}
+        {profileTestCases.map((testcase) => (
+          <TESTCASE
+            key={testcase.id}
+            TestCaseObj={testcase}
+            isOwner={testcase.creatorId === userObj.uid}
           />
         ))}
       </div>

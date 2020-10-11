@@ -24,13 +24,18 @@ function App() {
   }, []);
 
   const refreshUser = async () => {
-    const user = authService.currentUser;
-    setUserObj({
-      displayName: user.displayName,
-      photoURL: user.photoURL,
-      uid: user.uid,
-      updateProfile: (args) => user.updateProfile(args),
-    });
+    const user = await authService.currentUser;
+    if(user){
+      setUserObj({
+        displayName: user.displayName,
+        photoURL: user.photoURL,
+        uid: user.uid,
+        updateProfile: (args) => user.updateProfile(args),
+      });
+    } else{
+      setIsLoggedIn(false)
+    }
+    
   };
 
   return (
