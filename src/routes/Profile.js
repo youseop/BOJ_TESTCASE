@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
+import AddTestCase from "../components/AddTestCase";
 import TESTCASE from "../components/TESTCASE";
 import { authService, dbService } from "../fbase";
 
@@ -65,6 +66,7 @@ const Profile = ({ refreshUser, userObj }) => {
         type="submit" value="Update Profile" />
       </form>
       <button onClick={onLogOutClick}>Log Out</button>
+      <AddTestCase userObj={userObj} />
       <div>
         {profileTestCases.map((testcase) => (
           <TESTCASE
