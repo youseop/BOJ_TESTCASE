@@ -5,15 +5,30 @@ import { dbService } from "../fbase";
 
 const Home = ({ userObj,isLoggedIn }) => {
   const [TestCases, setTestCases] = useState([]);
+  const [search, setsearch] = useState("");
   useEffect(() => {
     dbService.collection("TestCase").onSnapshot((snapshot) => {
-      const TestCaseArray = snapshot.docs.map((doc) => ({
+      let TestCaseArray = snapshot.docs.map((doc) => ({
         ...doc.data(),
         id: doc.id,
       }));
+      TestCaseArray = TestCaseArray.filter((testcase) => {
+        const bool =testcase.ProblemNum ===search;
+        return bool;
+      });
       setTestCases(TestCaseArray);
     });
-  }, []);
+  });
+  const onChange = (event) => {
+    const {
+      target: { value },
+    } = event;
+    setsearch(value);
+  };
+  const onSubmit = async (event) => {
+    event.preventDefault();
+    setsearch("");
+  }
 
   return (
     <div>
@@ -25,6 +40,16 @@ const Home = ({ userObj,isLoggedIn }) => {
       <div>
         {isLoggedIn & userObj ? (
           <>
+          <form onSubmit={onSubmit}>
+            <input
+          value={search}
+          onChange={onChange}
+          type="text"
+          placeholder="Search Test Case"
+          maxLength={20}
+        />
+        </form>
+          
           {TestCases.map((TestCase) => (
             <TESTCASE
               key={TestCase.id}
@@ -35,6 +60,15 @@ const Home = ({ userObj,isLoggedIn }) => {
           </>
         ):(
           <>
+          <form onSubmit={onSubmit}>
+            <input
+          value={search}
+          onChange={onChange}
+          type="text"
+          placeholder="Search Test Case"
+          maxLength={20}
+        />
+        </form>
           {TestCases.map((TestCase) => (
             <TESTCASE
               key={TestCase.id}

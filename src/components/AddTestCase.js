@@ -29,7 +29,7 @@ const AddTestCase = ({ userObj }) => {
       creatorId: userObj.uid,
       attachmentUrl,
     };
-    console.log(userObj.uid);
+    // console.log(userObj.uid);
     await dbService.collection("TestCase").add(testObj);
     setTestCase("");
     setAttachment("");

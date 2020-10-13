@@ -51,11 +51,10 @@ const Profile = ({ refreshUser, userObj }) => {
   }, []);
 
   return (
-    <><div className="profile">
-      <div className="display_id">{userObj.displayName}</div>
-      <form onSubmit={onSubmit} className="profile_form">
+    <><div>
+      <div>{userObj.displayName}</div>
+      <form onSubmit={onSubmit}>
         <input
-        className="changeid"
           value={newDisplayName}
           onChange={onChange}
           type="text"
@@ -63,9 +62,9 @@ const Profile = ({ refreshUser, userObj }) => {
           maxLength={20}
         />
         <input 
-        className="changeid_submit, btn" type="submit" value="Update Profile" />
+        type="submit" value="Update Profile" />
       </form>
-      <button className="btn" onClick={onLogOutClick}>Log Out</button>
+      <button onClick={onLogOutClick}>Log Out</button>
       <div>
         {profileTestCases.map((testcase) => (
           <TESTCASE
