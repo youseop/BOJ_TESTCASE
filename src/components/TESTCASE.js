@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { dbService, storageService } from "../fbase";
+import AddReport from "./Report";
 
 const TESTCASE = ({ TestCaseObj, isOwner }) => {
   const [editing, setEditing] = useState(false);
@@ -42,6 +43,9 @@ const TESTCASE = ({ TestCaseObj, isOwner }) => {
     } = event;
     setnewResult(value);
   };
+  // Reporting
+  const [Reporting, setReporting] = useState(false);
+  const toggleReporting = () => setReporting((prev) => !prev);
   return (
     <div>
       {editing ? (
@@ -58,11 +62,12 @@ const TESTCASE = ({ TestCaseObj, isOwner }) => {
         <>
           
           <h4>Test Case #{TestCaseObj.ProblemNum}</h4>
-          <h4>{TestCaseObj.text}</h4>
-          <h4>{TestCaseObj.result}</h4>
           <h6>{TestCaseObj.name}</h6>
-         
-          {isOwner && (
+          <div className="wrap">
+          <textarea>{TestCaseObj.text}</textarea>
+          <textarea>{TestCaseObj.result}</textarea>
+          </div>
+          {isOwner ? (
             <>
               <button onClick={onDeleteClick}>
                 Delete
@@ -71,6 +76,19 @@ const TESTCASE = ({ TestCaseObj, isOwner }) => {
                 Edit
               </button>
             </>
+          ):(
+          <>
+          {Reporting ? (
+            <>
+            <AddReport ProblemNum={TestCaseObj.ProblemNum} name={TestCaseObj.name} text={TestCaseObj.text} result={TestCaseObj.result}/>
+            <button onClick={toggleReporting}>Cancel</button>
+            </>
+          ):(
+            <>
+            <button onClick={toggleReporting}>Report</button>
+            </>
+          )}
+          </>
           )}
         </>
       )}

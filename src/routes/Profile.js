@@ -50,6 +50,9 @@ const Profile = ({ refreshUser, userObj }) => {
   useEffect(() => {
     getMyTestCases();
   }, []);
+  
+  const [WannaAdd, setWannaAdd] = useState(false);
+  const toggleWannaAdd = () => setWannaAdd((prev) => !prev);
 
   return (
     <><div>
@@ -66,7 +69,19 @@ const Profile = ({ refreshUser, userObj }) => {
         type="submit" value="Update Profile" />
       </form>
       <button onClick={onLogOutClick}>Log Out</button>
-      <AddTestCase userObj={userObj} />
+      {WannaAdd ? (
+            <>
+            <AddTestCase userObj={userObj} />
+            <button onClick={toggleWannaAdd}>Cancel</button>
+            </>
+          ):(
+            <>
+            <button onClick={toggleWannaAdd}>Add Test Case</button>
+            </>
+          )}
+      
+
+
       <div>
         {profileTestCases.map((testcase) => (
           <TESTCASE

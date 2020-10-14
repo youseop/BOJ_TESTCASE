@@ -12,9 +12,10 @@ const Navigation = ({ userObj,isLoggedIn }) => {
         </li>
         <li>
         {isLoggedIn ? (
-          <Link to="/Profile">Profile</Link>
-          ):(
-            <Auth />
+          <Link to="/Profile">Add TestCase</Link>
+          ):(<>
+            <h6>Add Test Case after sign in</h6><Auth />
+            </>
           )}
         </li></div>
       </ul>

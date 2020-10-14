@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-// import { FormControl } from 'react-bootstrap';
-import { Button, Form, FormGroup, Label, Input, InputGroup } from 'reactstrap';
 import { v4 as uuidv4 } from "uuid";
 import { dbService, storageService } from "../fbase";
 
@@ -35,6 +33,7 @@ const AddTestCase = ({ userObj }) => {
     setAttachment("");
     setProblemNum("");
     setResult("");
+    alert("테스트 케이스가 추가되었습니다.");
   };
 
   const onChange_text = (event) => {
@@ -78,20 +77,22 @@ const AddTestCase = ({ userObj }) => {
           placeholder="problem number"
           maxLength={15}
         />
-        <input
+        <div className="wrap">
+        <textarea
           value={TestCase}
           onChange={onChange_text}
           type="text"
           placeholder="Add test case"
-          maxLength={120}
+          maxLength={400}
         />
-        <input
+        <textarea
           value={Result}
           onChange={onChange_Result}
           type="text"
           placeholder="Result"
-          maxLength={120}
+          maxLength={400}
         />
+        </div>
         <input type="submit" value="Add" />
         
       </form>
