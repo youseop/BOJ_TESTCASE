@@ -57,7 +57,7 @@ const TESTCASE = ({ TestCaseObj, isOwner }) => {
       ) : (
         <>
           
-          <h4>Test Case#{TestCaseObj.ProblemNum}</h4>
+          <h4>Test Case #{TestCaseObj.ProblemNum}</h4>
           <h4>{TestCaseObj.text}</h4>
           <h4>{TestCaseObj.result}</h4>
           <h6>{TestCaseObj.name}</h6>
