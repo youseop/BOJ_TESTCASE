@@ -31,13 +31,13 @@ const Home = ({ userObj,isLoggedIn }) => {
 
 
   return (
-    <div>
+    <div className="homecontainer">
       {/* <div>
         {isLoggedIn && (<AddTestCase userObj={userObj} />) }
         
       </div> */}
 
-      <div>
+      <div className="home">
         {isLoggedIn & userObj ? (
           <>
           <form onSubmit={onSubmit}>
@@ -49,19 +49,22 @@ const Home = ({ userObj,isLoggedIn }) => {
           maxLength={20}
         />
         </form>
-          
-          {TestCases.map((TestCase) => (
+          <div className="showingTestcase">
+            {TestCases.map((TestCase) => (
             <TESTCASE
               key={TestCase.id}
               TestCaseObj={TestCase}
               isOwner={TestCase.creatorId === userObj.uid}
             />
           ))}
+          </div>
+          
           </>
         ):(
           <>
           <form onSubmit={onSubmit}>
             <input
+            className="Search"
           value={search}
           onChange={onChange}
           type="text"

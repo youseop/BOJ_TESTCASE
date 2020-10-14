@@ -23,10 +23,10 @@ const Auth = () => {
       {/* <AuthForm /> */}
       <div>
         <div>
-        <button onClick={onSocialClick} name="google">
+        <button onClick={onSocialClick} name="google" className="google btn">
           Sign in - Google
         </button>
-        <button onClick={onSocialClick} name="github">
+        <button onClick={onSocialClick} name="github" className="github btn">
           Sign in - Github
         </button>
         </div>

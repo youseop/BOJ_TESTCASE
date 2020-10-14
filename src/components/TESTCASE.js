@@ -63,9 +63,8 @@ const TESTCASE = ({ TestCaseObj, isOwner }) => {
         </>
       ) : (
         <>
-          
-          <h4>Test Case #{TestCaseObj.ProblemNum}</h4>
-          <h6>{TestCaseObj.name}</h6>
+          <div>Test Case #{TestCaseObj.ProblemNum}</div>
+          <div>{TestCaseObj.name}</div>
           <div className="wrap">
           <CopyToClipboard text={TestCaseObj.text}>
             <button>Copy</button>

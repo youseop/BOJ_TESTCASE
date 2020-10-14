@@ -1,0 +1,88 @@
+.Search {
+  all: unset;
+  font-size: xx-large;
+  font-weight: 600;
+  color: gray;
+  margin: 5px 10px;
+  padding: 5px 40px;
+  border-radius: 20px;
+  border-color: gray;
+  background-color: whitesmoke;
+  width: 260px;
+  font-family: "Nanum Gothic", sans-serif;
+  cursor: pointer;
+  transition: all 0.5s;
+  margin-bottom: 40px;
+}
+.showingTestcase {
+  width: 100%;
+}
+.Search:hover {
+  background-color: rgb(230, 227, 227);
+  transition: all 0.5s;
+}
+.homecontainer {
+  width: 100%;
+}
+.home {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 73vh;
+}
+/* 네비게이션 스타일링 */
+.link {
+  font-weight: 600;
+  margin-right: 30px;
+  color: rgb(104, 103, 103);
+  text-decoration: none;
+}
+.navigation {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.navLogin {
+  display: grid;
+  grid-template-columns: repeat(1fr, 2);
+}
+li {
+  all: unset;
+}
+
+footer {
+  margin: 40px;
+  text-align: center;
+  font-weight: 600;
+}
+
+.Initializing {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80vh;
+  font-size: xx-large;
+  font-weight: 600;
+  color: rgb(104, 103, 103);
+}
+
+/* 오른쪽 상단 버튼 */
+.btn {
+  all: unset;
+  font-size: 10px;
+  font-weight: 600;
+  margin-right: 10px;
+  color: rgb(104, 103, 103);
+  text-decoration: none;
+  border-radius: 10px;
+  border-style: solid;
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+.btn:hover {
+  background-color: rgb(112, 112, 112);
+  transition: all 0.5s;
+  color: whitesmoke;
+}

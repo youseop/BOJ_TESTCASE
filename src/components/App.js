@@ -46,10 +46,12 @@ function App() {
           isLoggedIn={isLoggedIn}
           userObj={userObj}
         />
-      ) : (
-        "initializing..."
+      ) : (<div className="Initializing">"Wait for a while..."</div>
+        
       )}
       <footer>
+        Problem from B.O.J
+        <br/>
         {" "}
         &copy; {new Date().getFullYear()} Youseop
       </footer>

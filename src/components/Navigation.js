@@ -6,16 +6,16 @@ const Navigation = ({ isLoggedIn }) => {
   return (
     
     <nav>
-      <ul><div>
+      <ul><div className="navigation">
         <li>
-          <Link to="/">Home</Link>
+          <Link to="/" className="link">Home</Link>
         </li>
         <li>
         {isLoggedIn ? (
-          <Link to="/Profile">Add TestCase</Link>
-          ):(<>
-            <h6>Add Test Case after sign in</h6><Auth />
-            </>
+          <Link to="/Profile" className="link">Add TestCase</Link>
+          ):(<div className="navLogin">
+            <Auth />
+            </div>
           )}
         </li></div>
       </ul>
