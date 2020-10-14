@@ -72,8 +72,8 @@ const Profile = ({ refreshUser, userObj }) => {
       </form>
       {WannaAdd ? (
             <>
-            <AddTestCase userObj={userObj} />
             <button onClick={toggleWannaAdd}>Cancel</button>
+            <AddTestCase userObj={userObj} />
             </>
           ):(
             <>
