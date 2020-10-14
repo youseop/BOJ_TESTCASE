@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import { dbService, storageService } from "../fbase";
+import { dbService } from "../fbase";
 import AddReport from "./Report";
+import { CopyToClipboard } from 'react-copy-to-clipboard'
 
 const TESTCASE = ({ TestCaseObj, isOwner }) => {
   const [editing, setEditing] = useState(false);
@@ -46,6 +47,8 @@ const TESTCASE = ({ TestCaseObj, isOwner }) => {
   // Reporting
   const [Reporting, setReporting] = useState(false);
   const toggleReporting = () => setReporting((prev) => !prev);
+
+ 
   return (
     <div>
       {editing ? (
@@ -64,8 +67,14 @@ const TESTCASE = ({ TestCaseObj, isOwner }) => {
           <h4>Test Case #{TestCaseObj.ProblemNum}</h4>
           <h6>{TestCaseObj.name}</h6>
           <div className="wrap">
-          <textarea>{TestCaseObj.text}</textarea>
-          <textarea>{TestCaseObj.result}</textarea>
+          <CopyToClipboard text={TestCaseObj.text}>
+            <button>Copy</button>
+          </CopyToClipboard>
+          <textarea name="Testcase" defaultValue={TestCaseObj.text}></textarea>
+          <CopyToClipboard text={TestCaseObj.result}>
+            <button>Copy</button>
+          </CopyToClipboard>
+          <textarea name="Result" defaultValue={TestCaseObj.result}></textarea>
           </div>
           {isOwner ? (
             <>

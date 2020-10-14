@@ -9,6 +9,7 @@
     "bootstrap": "^4.5.2",
     "firebase": "^7.23.0",
     "react": "^16.13.1",
+    "react-copy-to-clipboard": "^5.0.2",
     "react-dom": "^16.13.1",
     "react-router-dom": "^5.2.0",
     "react-scripts": "2.1.8",

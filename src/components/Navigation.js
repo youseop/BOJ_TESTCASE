@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Auth from "../routes/Auth";
 
-const Navigation = ({ userObj,isLoggedIn }) => {
+const Navigation = ({ isLoggedIn }) => {
   return (
     
     <nav>

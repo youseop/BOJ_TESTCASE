@@ -53,10 +53,12 @@ const Profile = ({ refreshUser, userObj }) => {
   
   const [WannaAdd, setWannaAdd] = useState(false);
   const toggleWannaAdd = () => setWannaAdd((prev) => !prev);
+  const [WannaEorD, setWannaEorD] = useState(false);
+  const toggleWannaEorD = () => setWannaEorD((prev) => !prev);
 
   return (
     <><div>
-      <div>{userObj.displayName}</div>
+      <h3>{userObj.displayName}</h3>
       <form onSubmit={onSubmit}>
         <input
           value={newDisplayName}
@@ -68,7 +70,6 @@ const Profile = ({ refreshUser, userObj }) => {
         <input 
         type="submit" value="Update Profile" />
       </form>
-      <button onClick={onLogOutClick}>Log Out</button>
       {WannaAdd ? (
             <>
             <AddTestCase userObj={userObj} />
@@ -83,14 +84,26 @@ const Profile = ({ refreshUser, userObj }) => {
 
 
       <div>
-        {profileTestCases.map((testcase) => (
-          <TESTCASE
+      {WannaEorD ? (
+            <>
+            <button onClick={toggleWannaEorD}>Done</button>
+            {profileTestCases.map((testcase) => (
+            <TESTCASE
             key={testcase.id}
             TestCaseObj={testcase}
             isOwner={testcase.creatorId === userObj.uid}
-          />
-        ))}
+            />
+            ))}
+            
+            </>
+          ):(
+            <>
+            <button onClick={toggleWannaEorD}>Manage your Test Cases - Edit or Delete</button>
+            </>
+          )}
+        
       </div>
+      <button onClick={onLogOutClick}>Log Out</button>
     </div>
     </>
   );
