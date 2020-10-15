@@ -40,7 +40,7 @@ const Home = ({ userObj,isLoggedIn }) => {
       <div className="home">
         {isLoggedIn & userObj ? (
           <>
-          <form onSubmit={onSubmit}>
+          <form className="Search_form" onSubmit={onSubmit}>
             <input
           value={search}
           onChange={onChange}

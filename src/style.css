@@ -1,6 +1,9 @@
+.router {
+  width: 100%;
+}
 .Search {
   all: unset;
-  font-size: xx-large;
+  font-size: 1.5em;
   font-weight: 600;
   color: gray;
   margin: 5px 10px;
@@ -8,11 +11,14 @@
   border-radius: 20px;
   border-color: gray;
   background-color: whitesmoke;
-  width: 260px;
+  width: 70%;
   font-family: "Nanum Gothic", sans-serif;
   cursor: pointer;
   transition: all 0.5s;
   margin-bottom: 40px;
+  text-align: center;
+}
+.Search_form {
 }
 .showingTestcase {
   width: 100%;
@@ -30,6 +36,7 @@
   flex-direction: column;
   align-items: center;
   min-height: 73vh;
+  font-family: "Nanum Gothic", sans-serif;
 }
 /* 네비게이션 스타일링 */
 .link {
@@ -55,6 +62,7 @@ footer {
   margin: 40px;
   text-align: center;
   font-weight: 600;
+  font-size: 1em;
 }
 
 .Initializing {
@@ -82,7 +90,117 @@ footer {
   transition: all 0.5s;
 }
 .btn:hover {
-  background-color: rgb(112, 112, 112);
+  background-color: rgb(216, 216, 216);
   transition: all 0.5s;
-  color: whitesmoke;
+}
+/* 테스트케이스 */
+.Testcase_name {
+  font-family: "Nanum Gothic", sans-serif;
+  font-size: 5px;
+  color: gray;
+}
+.Testcase {
+  font-family: "Nanum Gothic", sans-serif;
+  margin: 20px;
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.testcase_button {
+  all: unset;
+  cursor: pointer;
+  transition: all 0.3s;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+.testcase_button:hover {
+  transition: all 0.3s;
+  color: rgb(139, 194, 245);
+}
+/* Report */
+.testcase_button.report:hover {
+  transition: all 0.3s;
+  color: rgb(197, 15, 121);
+}
+.testcase_button.add {
+  transition: all 0.3s;
+  font-size: 3em;
+}
+.testcase_button.add:hover {
+  transition: all 0.3s;
+  font-size: 3em;
+}
+.wrap {
+  width: 87%;
+  max-width: 500px;
+  display: grid;
+  grid-template-columns: repeat(1fr, 8);
+  grid-template-rows: repeat(1fr, 8);
+}
+.wrapinput {
+  width: 87%;
+  max-width: 500px;
+  display: grid;
+  grid-template-columns: repeat(1fr, 8);
+  grid-template-rows: repeat(1fr, 8);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.wrapinput textarea {
+  min-height: 30vh;
+  min-width: 20vw;
+  height: auto;
+  width: 100%;
+  resize: none;
+  padding: 1.1em; /* prevents text jump on Enter keypress */
+  border-color: transparent;
+  box-shadow: 0px 0px 2px rgb(138, 137, 137);
+  font-family: "Nanum Gothic", sans-serif;
+  line-height: 1.6;
+}
+.wrap textarea {
+  min-height: 100px;
+  height: auto;
+  width: 100%;
+  resize: none;
+  /* overflow-y: hidden; prevents scroll bar flash */
+  padding: 1.1em; /* prevents text jump on Enter keypress */
+  padding-bottom: 0.2em;
+  line-height: 1.6;
+  border-color: transparent;
+  box-shadow: 0px 0px 2px rgb(138, 137, 137);
+  font-family: "Nanum Gothic", sans-serif;
+}
+/* Profile */
+.Name {
+  font-size: 2em;
+}
+.changenameform {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 30px;
+}
+.ChangeName {
+  all: unset;
+  font-size: 1.5em;
+  background-color: rgb(160, 160, 160);
+  border-radius: 10px;
+  text-align: center;
+  color: white;
+  margin: 5px;
+  padding: 5px;
+}
+.testcase_button.ADDTESTCASE {
+  color: rgb(197, 15, 121);
+  font-size: 1.3em;
+  font-weight: 800;
+  margin: 10vh;
 }

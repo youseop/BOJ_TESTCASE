@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import { dbService } from "../fbase";
 import AddReport from "./Report";
 import { CopyToClipboard } from 'react-copy-to-clipboard'
+import { faBell } from "@fortawesome/free-solid-svg-icons"
+import { faTimesCircle } from "@fortawesome/free-solid-svg-icons"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
 const TESTCASE = ({ TestCaseObj, isOwner }) => {
   const [editing, setEditing] = useState(false);
@@ -50,7 +53,7 @@ const TESTCASE = ({ TestCaseObj, isOwner }) => {
 
  
   return (
-    <div>
+    <div className="Testcase">
       {editing ? (
         <>
           <form onSubmit={onSubmit}>
@@ -64,36 +67,36 @@ const TESTCASE = ({ TestCaseObj, isOwner }) => {
       ) : (
         <>
           <div>Test Case #{TestCaseObj.ProblemNum}</div>
-          <div>{TestCaseObj.name}</div>
+          <div className="Testcase_name">{TestCaseObj.name}</div>
           <div className="wrap">
           <CopyToClipboard text={TestCaseObj.text}>
-            <button>Copy</button>
+            <button className="testcase_button">Copy</button>
           </CopyToClipboard>
           <textarea name="Testcase" defaultValue={TestCaseObj.text}></textarea>
           <CopyToClipboard text={TestCaseObj.result}>
-            <button>Copy</button>
+            <button className="testcase_button">Copy</button>
           </CopyToClipboard>
           <textarea name="Result" defaultValue={TestCaseObj.result}></textarea>
           </div>
           {isOwner ? (
-            <>
-              <button onClick={onDeleteClick}>
+            <div>
+              <button className="testcase_button" onClick={onDeleteClick}>
                 Delete
               </button>
-              <button onClick={toggleEditing}>
+              <button className="testcase_button" onClick={toggleEditing}>
                 Edit
               </button>
-            </>
+            </div>
           ):(
           <>
           {Reporting ? (
             <>
             <AddReport ProblemNum={TestCaseObj.ProblemNum} name={TestCaseObj.name} text={TestCaseObj.text} result={TestCaseObj.result}/>
-            <button onClick={toggleReporting}>Cancel</button>
+            <button onClick={toggleReporting} className="testcase_button"><FontAwesomeIcon icon={faTimesCircle} /></button>
             </>
           ):(
             <>
-            <button onClick={toggleReporting}>Report</button>
+            <button onClick={toggleReporting} className="testcase_button report">Report Problem &nbsp; <FontAwesomeIcon icon={faBell} /></button>
             </>
           )}
           </>

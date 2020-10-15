@@ -42,7 +42,7 @@ const AddReport = ({ ProblemNum, name,text,result }) => {
           maxLength={2000}
         />
         </div>
-        <input type="submit" value="Add" />
+        <input className="testcase_button report" type="submit" value="Report" />
         
       </form>
     </div>

@@ -69,7 +69,8 @@ const AddTestCase = ({ userObj }) => {
         </FormGroup>
       </Form> */}
       
-      <form onSubmit={onSubmit}>
+      <form className="changenameform" onSubmit={onSubmit}>
+      <input className="testcase_button add" type="submit" value="ADD" />
         <input
           value={ProblemNum}
           onChange={onChange_problem}
@@ -77,7 +78,7 @@ const AddTestCase = ({ userObj }) => {
           placeholder="problem number"
           maxLength={15}
         />
-        <div className="wrap">
+        <div className="wrapinput">
         <textarea
           value={TestCase}
           onChange={onChange_text}
@@ -93,7 +94,7 @@ const AddTestCase = ({ userObj }) => {
           maxLength={400}
         />
         </div>
-        <input type="submit" value="Add" />
+        
         
       </form>
     </div>

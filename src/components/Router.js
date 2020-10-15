@@ -12,7 +12,7 @@ import Navigation from "./Navigation";
 
 const AppRouter = ({ refreshUser, isLoggedIn, userObj }) => {
   return (
-    <div>
+    <div className="router">
     <Router>
       <Navigation userObj={userObj} isLoggedIn={isLoggedIn}/>
       <Switch>

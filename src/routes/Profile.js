@@ -3,6 +3,8 @@ import { useHistory } from "react-router-dom";
 import AddTestCase from "../components/AddTestCase";
 import TESTCASE from "../components/TESTCASE";
 import { authService, dbService } from "../fbase";
+import { faPlus, faSignOutAlt, faTimesCircle } from "@fortawesome/free-solid-svg-icons"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
 const Profile = ({ refreshUser, userObj }) => {
   const history = useHistory();
@@ -57,27 +59,29 @@ const Profile = ({ refreshUser, userObj }) => {
   const toggleWannaEorD = () => setWannaEorD((prev) => !prev);
 
   return (
-    <><div>
-      <h3>{userObj.displayName}</h3>
-      <form onSubmit={onSubmit}>
+    <><div className="home">
+      
+      {WannaAdd ? (
+            <>
+            <button className="testcase_button" onClick={toggleWannaAdd}><FontAwesomeIcon icon={faTimesCircle} /></button>
+            <AddTestCase userObj={userObj} />
+            </>
+          ):(
+            <>
+            <div className="Name">{userObj.displayName}</div>
+      <form class="changenameform" onSubmit={onSubmit}>
         <input
+         className="ChangeName"
           value={newDisplayName}
           onChange={onChange}
           type="text"
           placeholder="Display name"
           maxLength={20}
         />
-        <input 
-        type="submit" value="Update Profile" />
+        <input className="testcase_button"
+        type="submit" value="Update Display Name" />
       </form>
-      {WannaAdd ? (
-            <>
-            <button onClick={toggleWannaAdd}>Cancel</button>
-            <AddTestCase userObj={userObj} />
-            </>
-          ):(
-            <>
-            <button onClick={toggleWannaAdd}>Add Test Case</button>
+            <button className="testcase_button ADDTESTCASE" onClick={toggleWannaAdd}><FontAwesomeIcon icon={faPlus} />&nbsp;Add Test Case&nbsp;<FontAwesomeIcon icon={faPlus} /></button>
             </>
           )}
       
@@ -86,7 +90,7 @@ const Profile = ({ refreshUser, userObj }) => {
       <div>
       {WannaEorD ? (
             <>
-            <button onClick={toggleWannaEorD}>Done</button>
+            <button className="testcase_button" onClick={toggleWannaEorD}>Done</button>
             {profileTestCases.map((testcase) => (
             <TESTCASE
             key={testcase.id}
@@ -98,12 +102,12 @@ const Profile = ({ refreshUser, userObj }) => {
             </>
           ):(
             <>
-            <button onClick={toggleWannaEorD}>Manage your Test Cases - Edit or Delete</button>
+            <button className="testcase_button" onClick={toggleWannaEorD}>Manage your Test Cases - Edit or Delete</button>
             </>
           )}
         
       </div>
-      <button onClick={onLogOutClick}>Log Out</button>
+      <button className="testcase_button" onClick={onLogOutClick}><FontAwesomeIcon icon={faSignOutAlt} />&nbsp;Log Out</button>
     </div>
     </>
   );
