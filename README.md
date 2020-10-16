@@ -1,7 +1,7 @@
 # BOJ_TESTCASE
  webpage for saving testcases in B.O.J
 
-Test Case for the problems in (https://www.acmicpc.net/step)
+Test Case for the problems in - https://www.acmicpc.net/step
 
 Recently updated in 2020-10-16 - https://youseop.github.io/BOJ_TESTCASE/#/
 
