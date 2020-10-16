@@ -44,6 +44,12 @@
   margin-right: 30px;
   color: rgb(104, 103, 103);
   text-decoration: none;
+  font-size: 1em;
+  transition: all 0.5s;
+}
+.link:hover {
+  color: rgb(53, 42, 42);
+  transition: all 0.5s;
 }
 .navigation {
   display: flex;
@@ -81,7 +87,7 @@ footer {
   font-size: 10px;
   font-weight: 600;
   margin-right: 10px;
-  color: rgb(104, 103, 103);
+  color: rgb(70, 28, 28);
   text-decoration: none;
   border-radius: 10px;
   border-style: solid;
@@ -90,7 +96,7 @@ footer {
   transition: all 0.5s;
 }
 .btn:hover {
-  background-color: rgb(216, 216, 216);
+  background-color: rgb(170, 170, 170);
   transition: all 0.5s;
 }
 /* 테스트케이스 */
@@ -117,6 +123,9 @@ footer {
   margin-bottom: 5px;
   font-weight: 600;
 }
+.testcase_button.logout {
+  margin: 15px;
+}
 .testcase_button:hover {
   transition: all 0.3s;
   color: rgb(139, 194, 245);
@@ -129,10 +138,12 @@ footer {
 .testcase_button.add {
   transition: all 0.3s;
   font-size: 3em;
+  color: rgb(197, 15, 121);
 }
 .testcase_button.add:hover {
   transition: all 0.3s;
   font-size: 3em;
+  color: rgb(233, 93, 175);
 }
 .wrap {
   width: 87%;
@@ -201,6 +212,12 @@ footer {
 .testcase_button.ADDTESTCASE {
   color: rgb(197, 15, 121);
   font-size: 1.3em;
+  font-weight: 800;
+  margin: 10vh;
+}
+.testcase_button.ADDTESTCASE:hover {
+  color: rgb(233, 93, 175);
+  font-size: 1.4em;
   font-weight: 800;
   margin: 10vh;
 }

@@ -102,12 +102,12 @@ const Profile = ({ refreshUser, userObj }) => {
             </>
           ):(
             <>
-            <button className="testcase_button" onClick={toggleWannaEorD}>Manage your Test Cases - Edit or Delete</button>
+            <button className="testcase_button logout" onClick={toggleWannaEorD}>Manage your Test Cases - Edit or Delete</button>
             </>
           )}
         
       </div>
-      <button className="testcase_button" onClick={onLogOutClick}><FontAwesomeIcon icon={faSignOutAlt} />&nbsp;Log Out</button>
+      <button className="testcase_button logout" onClick={onLogOutClick}><FontAwesomeIcon icon={faSignOutAlt} />&nbsp;Log Out</button>
     </div>
     </>
   );
