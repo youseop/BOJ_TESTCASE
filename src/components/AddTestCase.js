@@ -33,7 +33,6 @@ const AddTestCase = ({ userObj }) => {
     setAttachment("");
     setProblemNum("");
     setResult("");
-    alert("테스트 케이스가 추가되었습니다.");
   };
 
   const onChange_text = (event) => {

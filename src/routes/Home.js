@@ -31,9 +31,6 @@ const Home = ({ userObj,isLoggedIn }) => {
     event.preventDefault();
     setsearch("");
   }
-  const [WannaAdd, setWannaAdd] = useState(false);
-  const toggleWannaAdd = () => setWannaAdd((prev) => !prev);
-
 
   return (
     <div className="homecontainer">
@@ -41,14 +38,7 @@ const Home = ({ userObj,isLoggedIn }) => {
         {isLoggedIn && (<AddTestCase userObj={userObj} />) }
         
       </div> */}
-      {WannaAdd ? (
-            <>
-            <button className="testcase_button" onClick={toggleWannaAdd}><FontAwesomeIcon icon={faTimesCircle} /></button>
-            <AddTestCase userObj={userObj} />
-            </>
-          ):(
-            <button className="testcase_button HOMEADDTESTCASE" onClick={toggleWannaAdd}><FontAwesomeIcon icon={faPlus} />&nbsp;Add Test Case&nbsp;<FontAwesomeIcon icon={faPlus} /></button>
-          )}
+      
 
       <div className="home">
         {isLoggedIn & userObj ? (

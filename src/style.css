@@ -54,6 +54,13 @@
   color: rgb(53, 42, 42);
   transition: all 0.5s;
 }
+.link.add {
+  color: rgb(197, 15, 121);
+}
+.link.add:hover {
+  color: rgb(233, 93, 175);
+  transition: all 0.5s;
+}
 .navigation {
   display: flex;
   align-items: center;
