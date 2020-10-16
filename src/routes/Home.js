@@ -1,4 +1,7 @@
+import { faPlus, faTimesCircle } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useEffect, useState } from "react";
+import AddTestCase from "../components/AddTestCase";
 import TESTCASE from "../components/TESTCASE";
 import { dbService } from "../fbase";
 
@@ -28,6 +31,8 @@ const Home = ({ userObj,isLoggedIn }) => {
     event.preventDefault();
     setsearch("");
   }
+  const [WannaAdd, setWannaAdd] = useState(false);
+  const toggleWannaAdd = () => setWannaAdd((prev) => !prev);
 
 
   return (
@@ -36,6 +41,14 @@ const Home = ({ userObj,isLoggedIn }) => {
         {isLoggedIn && (<AddTestCase userObj={userObj} />) }
         
       </div> */}
+      {WannaAdd ? (
+            <>
+            <button className="testcase_button" onClick={toggleWannaAdd}><FontAwesomeIcon icon={faTimesCircle} /></button>
+            <AddTestCase userObj={userObj} />
+            </>
+          ):(
+            <button className="testcase_button HOMEADDTESTCASE" onClick={toggleWannaAdd}><FontAwesomeIcon icon={faPlus} />&nbsp;Add Test Case&nbsp;<FontAwesomeIcon icon={faPlus} /></button>
+          )}
 
       <div className="home">
         {isLoggedIn & userObj ? (

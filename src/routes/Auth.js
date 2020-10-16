@@ -24,10 +24,10 @@ const Auth = () => {
       <div>
         <div>
         <button onClick={onSocialClick} name="google" className="google btn">
-          Sign in - Google
+          Google
         </button>
         <button onClick={onSocialClick} name="github" className="github btn">
-          Sign in - Github
+          Github
         </button>
         </div>
       </div>

@@ -29,6 +29,9 @@
 }
 .homecontainer {
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .home {
   width: 100%;
@@ -63,7 +66,6 @@
 li {
   all: unset;
 }
-
 footer {
   margin: 40px;
   text-align: center;
@@ -84,19 +86,17 @@ footer {
 /* 오른쪽 상단 버튼 */
 .btn {
   all: unset;
-  font-size: 10px;
+  font-size: 1em;
   font-weight: 600;
-  margin-right: 10px;
-  color: rgb(70, 28, 28);
+  margin-right: 30px;
   text-decoration: none;
   border-radius: 10px;
-  border-style: solid;
-  padding: 5px 10px;
   cursor: pointer;
   transition: all 0.5s;
+  color: rgb(197, 15, 121);
 }
 .btn:hover {
-  background-color: rgb(170, 170, 170);
+  background-color: rgb(219, 218, 218);
   transition: all 0.5s;
 }
 /* 테스트케이스 */
@@ -213,7 +213,19 @@ footer {
   color: rgb(197, 15, 121);
   font-size: 1.3em;
   font-weight: 800;
-  margin: 10vh;
+  margin: 8vh;
+  height: 60px;
+}
+.testcase_button.HOMEADDTESTCASE {
+  color: rgb(197, 15, 121);
+  font-size: 1em;
+  font-weight: 800;
+  height: 30px;
+}
+.testcase_button.HOMEADDTESTCASE:hover {
+  color: rgb(233, 93, 175);
+  font-size: 1.1em;
+  font-weight: 800;
 }
 .testcase_button.ADDTESTCASE:hover {
   color: rgb(233, 93, 175);

@@ -1,3 +1,5 @@
+import { faLongArrowAltRight } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import { Link } from "react-router-dom";
 import Auth from "../routes/Auth";
@@ -8,15 +10,15 @@ const Navigation = ({ isLoggedIn }) => {
     <nav>
       <ul><div className="navigation">
         <li>
-          <Link to="/" className="link">Home</Link>
-        </li>
-        <li>
         {isLoggedIn ? (
-          <Link to="/Profile" className="link">Add TestCase</Link>
+          <Link to="/Profile" className="link">Profile</Link>
           ):(<div className="navLogin">
             <Auth />
             </div>
           )}
+        </li>
+        <li>
+          <Link to="/" className="link">Home</Link>
         </li></div>
       </ul>
     </nav>
