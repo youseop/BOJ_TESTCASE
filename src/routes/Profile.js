@@ -57,7 +57,6 @@ const Profile = ({ refreshUser, userObj }) => {
   const toggleWannaAdd = () => setWannaAdd((prev) => !prev);
   const [WannaEorD, setWannaEorD] = useState(false);
   const toggleWannaEorD = () => setWannaEorD((prev) => !prev);
-
   return (
     <><div className="home">
       
@@ -69,7 +68,7 @@ const Profile = ({ refreshUser, userObj }) => {
           ):(
             <>
             <div className="Name">{userObj.displayName}</div>
-      <form class="changenameform" onSubmit={onSubmit}>
+      <form className="changenameform" onSubmit={onSubmit}>
         <input
          className="ChangeName"
           value={newDisplayName}

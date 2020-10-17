@@ -1,7 +1,4 @@
-import { faPlus, faTimesCircle } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useEffect, useState } from "react";
-import AddTestCase from "../components/AddTestCase";
 import TESTCASE from "../components/TESTCASE";
 import { dbService } from "../fbase";
 
