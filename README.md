@@ -20,8 +20,8 @@ I'd love to get feedback Thanks!
 
 2020.10.18
 [Home]
-![1](https://user-images.githubusercontent.com/66366941/96471470-58c3ea80-126a-11eb-81e1-ad7e14913697.JPG)
+![1](https://user-images.githubusercontent.com/66366941/96471470-58c3ea80-126a-11eb-81e1-ad7e14913697.JPG){: width="50%"}
 [Manage Test Case]
-![2](https://user-images.githubusercontent.com/66366941/96471479-59f51780-126a-11eb-9d25-cc0249ed48cc.JPG)
+![2](https://user-images.githubusercontent.com/66366941/96471479-59f51780-126a-11eb-9d25-cc0249ed48cc.JPG){: width="50%"}
 [Add Test Case]
-![3](https://user-images.githubusercontent.com/66366941/96471481-5a8dae00-126a-11eb-912c-5ea2e76bd3d4.JPG)
+![3](https://user-images.githubusercontent.com/66366941/96471481-5a8dae00-126a-11eb-912c-5ea2e76bd3d4.JPG){: width="50%"}
