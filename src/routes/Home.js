@@ -7,11 +7,11 @@ const Home = ({ userObj,isLoggedIn }) => {
   const [search, setsearch] = useState("");
   useEffect(() => {
     dbService.collection("TestCase").onSnapshot((snapshot) => {
-      let TestCaseArray = snapshot.docs.map((doc) => ({
+      const tmpTestCaseArray = snapshot.docs.map((doc) => ({
         ...doc.data(),
         id: doc.id,
       }));
-      TestCaseArray = TestCaseArray.filter((testcase) => {
+      const TestCaseArray = tmpTestCaseArray.filter((testcase) => {
         const bool =testcase.ProblemNum ===search;
         return bool;
       });
@@ -26,7 +26,6 @@ const Home = ({ userObj,isLoggedIn }) => {
   };
   const onSubmit = async (event) => {
     event.preventDefault();
-    setsearch("");
   }
 
   return (
@@ -35,7 +34,6 @@ const Home = ({ userObj,isLoggedIn }) => {
         {isLoggedIn && (<AddTestCase userObj={userObj} />) }
         
       </div> */}
-      
 
       <div className="home">
         {isLoggedIn & userObj ? (

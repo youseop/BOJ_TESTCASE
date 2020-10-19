@@ -16,7 +16,6 @@ const AppRouter = ({ refreshUser, isLoggedIn, userObj }) => {
     <Router>
       <Navigation userObj={userObj} isLoggedIn={isLoggedIn}/>
       <Switch>
-        {true ? (
           <>
             <Route exact path="/">
               <Home userObj={userObj} isLoggedIn={isLoggedIn} />
@@ -26,14 +25,6 @@ const AppRouter = ({ refreshUser, isLoggedIn, userObj }) => {
             </Route>
             <Redirect from="*" to="/" />
           </>
-        ) : (
-          <>
-            <Route exact path="/">
-              <Auth />
-            </Route>
-            <Redirect from="*" to="/" />
-          </>
-        )}
       </Switch>
     </Router></div>
   );
