@@ -14,9 +14,15 @@ const AddReport = ({ ProblemNum, name,text,result }) => {
       name: name,
       Report:Report,
     };
-    await dbService.collection("Report").add(testObj);
-    setReport("");
-    alert("Problem Reported");
+    if (Report===""){
+      alert("Text invalid");
+    }
+    else{
+      await dbService.collection("Report").add(testObj);
+      setReport("");
+      alert("Problem Reported");
+    }
+    
   };
 
   const onChange_text = (event) => {
@@ -30,9 +36,9 @@ const AddReport = ({ ProblemNum, name,text,result }) => {
 
   return (
     
-    <div>
+    <div className="report_container">
       
-      <form onSubmit={onSubmit}>
+      <form onSubmit={onSubmit} className="report_form">
         <div className="wrap">
         <textarea
           value={Report}

@@ -138,6 +138,9 @@ footer {
   color: rgb(139, 194, 245);
 }
 /* Report */
+.report_container {
+  margin-top: 10px;
+}
 .testcase_button.report:hover {
   transition: all 0.3s;
   color: rgb(197, 15, 121);
