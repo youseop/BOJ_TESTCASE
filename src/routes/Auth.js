@@ -1,6 +1,6 @@
 import React from "react";
 // import AuthForm from "../components/AuthForm";
-import { authService, firebaseInstance } from "../fbase";
+import {  authService, firebaseInstance } from "../fbase";
 
 const Auth = () => {
   const onSocialClick = async (event) => {
@@ -14,7 +14,10 @@ const Auth = () => {
     } else if (name === "github") {
       provider = new firebaseInstance.auth.GithubAuthProvider();
     }
+    console.log(provider)
     const data = await authService.signInWithPopup(provider);
+    console.log(data);
+    
   };
 
   return (
