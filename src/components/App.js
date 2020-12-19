@@ -50,7 +50,7 @@ function App() {
         
       )}
       <footer>
-        Problem from B.O.J
+        Problem from BOJ
         <br/>
         {" "}
         &copy; {new Date().getFullYear()} Youseop
